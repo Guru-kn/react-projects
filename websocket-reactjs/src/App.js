@@ -35,7 +35,7 @@ class App extends Component {
                 {this.state.messages.map(msg => {
                     return (
                         <div>
-                            {this.state.name == msg.name ?
+                            {this.state.name === msg.name ?
                                 <div>
                                     <p className="title1">{msg.name} : </p><br/>
                                     <p>{msg.message}</p>
@@ -83,7 +83,7 @@ class App extends Component {
                 <div className="align-center">
                     {this.displayMessages()}
                 </div>
-                <SockJsClient url='http://localhost:8088/websocket-chat/'
+                <SockJsClient url='http://localhost:8080/websocket-chat/'
                               topics={['/topic/user']}
                               onConnect={() => {
                                   console.log("connected");
